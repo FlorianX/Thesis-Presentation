@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ 
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Chrome Developer Relations <chrome-devrel@googlegroups.com>
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+  Modifications and Contents: Florian Schuhmann
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+<title>HTML5 presentation</title>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<link
+	href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono"
+	rel="stylesheet" type="text/css" />
+<link href="styles/default.css" type="text/css" rel="stylesheet"
+	class="theme" media="screen" />
+<link href="styles/custom.css" type="text/css" rel="stylesheet"
+	media="screen" />
+</head>
+<body>
+	<div class="presentation">
+		<div id="presentation-counter"></div>
+		<div class="slides">
+			<!-- Slide //_-> -->
+			<div class="slide" id="controls-slide">
+				<header>Einf&uuml;hrung</header>
+				<section>
+					<h3>Diese Pr&auml;sentation ist eine HTML5-Webseite und
+						erreichbar unter:</h3>
+					<div style="margin: 0 0 0 300px;">
+						<h4>http://goo.gl/YH0xx</h4>
+						<img alt="Link als QR-Code" src="src/QR-Code.png"
+							style="width: 200px; margin-left: -30px;">
+					</div>
+					<h3>Steuerung:</h3>
+					<ul style="margin: 0 0 50px 0;">
+						<li><span class="key">&larr;</span> und <span class="key">&rarr;</span>
+							zum Bl&auml;ttern.</li>
+						<li><span class="key">Strg/Command</span> und <span
+							class="key">+</span> oder <span class="key">-</span> zum Zoomen.</li>
+						<li><span class="key">N</span> f&uuml;r Notizen.</li>
+					</ul>
+					<aside class="note">
+						<section>
+							<a target="_blank"
+								href="http://lights.elliegoulding.com/index.html">
+								Einstiegsbeispiel</a>
+						</section>
+					</aside>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide" id="title-slide">
+				<section class="middle">
+					<img alt="HTML5" src="src/html5-topper.png" />
+					<hgroup>
+						<h1>HTML5</h1>
+						<h2>
+							Derzeitige Leistungsfähigkeit und Möglichkeiten in Bezug<br>auf
+							aktuelle Browser und mobile Endgeräte
+						</h2>
+					</hgroup>
+					<p>Florian Schuhmann</p>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide" id="table-of-contents">
+				<header>
+					<h1>Agenda</h1>
+				</header>
+				<section>
+					<ul id="toc-list">
+					</ul>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="html5Definition-title">
+				<section class="middle">
+					<h2>HTML5</h2>
+					<p>die Definition</p>
+					<img src="src/HTML5_Logo_64.png" title="HTML5" alt="HTML5">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide html5Definition" id="what-is-HTML5">
+				<header>
+					<h1>Was ist HTML5?</h1>
+				</header>
+				<section>
+					<ul class="list">
+						<li><span>neue Version von HTML</span></li>
+						<li><span>ermöglicht bessere Systemintegration</span>
+							<ul>
+								<li><span>Device API, Drag&Drop API, File API</span></li>
+							</ul></li>
+						<li><span>(noch) kein Standard</span>
+							<ul>
+								<li><span>W3C <b>und</b> WHATWG
+								</span></li>
+							</ul></li>
+						<li><span>Verfasser Ian Hickson</span></li>
+					</ul>
+				</section>
+				<aside class="note">
+					<section>
+						W3C: 2014<br>WHATWG 2022
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide html5Definition" id="specs">
+				<header>
+					<h1>Gegen&uuml;berstellung</h1>
+				</header>
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th>W3C - "HTML5"</th>
+								<th>WHATWG - "HTML"</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border-right: 1px solid #F14A29; padding-right: 20px">
+									<ul class="list">
+										<li><span>Sub Set der WHATWG-Spezifikation</span></li>
+										<li><span>HTML im Mittelpunkt</span></li>
+										<li><span>versionsgetrieben</span>
+											<ul>
+												<li><span>Momentaufnahme</span></li>
+											</ul></li>
+									</ul>
+								</td>
+								<td>
+									<ul class="list">
+										<li><span>t&auml;glich Korrekturen + Erweiterungen</span></li>
+										<li><span>neue JS/DOM API‘s</span></li>
+										<li><span>versionslos</span>
+											<ul>
+												<li><span>"Living Standard"</span></li>
+											</ul></li>
+										<li><span>Ausrichtung auf Web Applikationen</span></li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<aside class="note">
+					<section>
+						<a href="http://www.whatwg.org/html">www.whatwg.org/html</a><br>
+						<a href="http://www.w3.org/TR/html5/">www.w3.org/TR/html5/</a>
+						<h4>fehlende Inhalte in der W3C-Fassung:</h4>
+						<ul>
+							<li>Microdata</li>
+							<li>Web Workers</li>
+							<li>Communication (server-sent Events, Web sockets, Web Messaging)</li>
+							<li>Web storage</li>
+							<li>...</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide html5Definition" id="HTML5-overview">
+				<section class="middle formula">
+					<img alt="&Uuml;berblick HTML5"
+						src="src/specification_overview.png" style="width: 700px;">
+					<div data-build>
+						<span>HTML5 ~= <span class="html">HTML</span> + <span
+							class="css">CSS</span> + <span class="js">JS</span>+ ...
+						</span>
+					</div>
+				</section>
+				<aside class="note">
+					<section>
+						<a href="http://www.peterkroener.de/">www.peterkroener.de/</a>
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide html5Definition" id="flashKiller">
+				<header>
+					<h1>HTML5 - der Flash-Killer?</h1>
+				</header>
+				<section>
+					<ul class="list">
+						<li><span>Apple schließt Flash auf iOS aus</span> <!-- http://www.apple.com/hotnews/thoughts-on-flash/ --></li>
+						<li>09.11. <span>Adobe: Flash-Rückzug von mobilen
+								Plattformen</span></li>
+						<li>14.11. <span>Occupy Flash</span>
+							<ul>
+								<li><span><q><b>Flash Player is dead.</b> Its time has
+											passed. It's buggy. It crashes a lot. It requires constant
+											security updates. It doesn't work on most mobile devices.
+											It's a fossil,[...]</q></span></li>
+							</ul></li>
+						<li>22.11. <span>Silverlight für Amazon Lovefilm</span></li>
+					</ul>
+					<img alt="Occupy Flash" src="src/occupy.png" id="occupy">
+				</section>
+				<aside class="note">
+					<section>
+						<a href="http://www.apple.com/hotnews/thoughts-on-flash/">www.apple.com/hotnews/thoughts-on-flash/</a><br>
+						<a
+							href="http://blogs.adobe.com/conversations/2011/11/flash-focus.html">blogs.adobe.com/conversations/2011/11/flash-focus.html</a><br>
+						<a href="http://occupyflash.org/">occupyflash.org/</a>
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="semanticHtml5-title">
+				<section class="middle">
+					<h2>Semantik und Markup</h2>
+					<p>in HTML5</p>
+					<img src="src/HTML5_Semantics_64.png" title="semantic HTML5"
+						alt="semantic HTML5">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide semanticHtml5" id="semantic1">
+				<header>
+					<span class="html">HTML</span>
+					<h1>semantisches HTML5</h1>
+				</header>
+				<section>
+					<pre>
+&lt;<b>!DOCTYPE html</b>&gt;
+&lt;html&gt;
+&lt;head&gt;
+ &lt;title&gt;Beispiel&lt;/title&gt;
+ &lt;<b>meta charset</b>="utf-8"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;<b>header</b>&gt;
+  &lt;<b>hgroup</b>&gt;
+   &lt;h1&gt;Weblog - Scala&lt;/h1&gt;
+   &lt;h2&gt;Frameworks&lt;/h2&gt;
+  &lt;/hgroup&gt;
+  &lt;<b>nav</b>&gt;
+   &lt;h1&gt;Navigation&lt;/h1&gt;
+   &lt;ul&gt;
+    &lt;li&gt;&lt;a href="lift.html"&gt;Lift&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="akka.html"&gt;Akka&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/nav&gt;
+ &lt;/header&gt;
+[...]
+ &lt;<b>footer</b>&gt;
+  &lt;p&gt;&lt;<b>small</b>&gt;Erstellt von Max Mustermann&lt;/small&gt;&lt;/p&gt;
+ &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+				</section>
+				<aside class="note">
+					<section>
+					Standard Generalized Markup Language (kurz SGML)
+					<ul>
+						<li>&lt;header&gt; - hinführende Inhalte, Navigationen, Überschriften</li>
+						<li>&lt;footer&gt; - in Beziehung stehende Inhalte: Verfasser, Copyright-Informationen</li>
+					</ul>
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide semanticHtml5" id="semantic2">
+				<header>
+					<span class="html">HTML</span>
+					<h1>semantisches HTML5</h1>
+				</header>
+				<section>
+					<pre class="two-column">
+&lt;<b>section</b> id="content"&gt;
+ &lt;<b>article</b>&gt;
+ 
+  &lt;<b>footer</b>&gt;
+   &lt;div&gt;Verfasser: Max Mustermann&lt;/div&gt;
+   &lt;<b>time</b> <em>pubdate 
+    datetime</em>="2010-09-01T14:14+01:00"&gt;
+    01 Sep.15:14&lt;/time&gt;
+  &lt;/footer&gt;
+ 
+  &lt;<b>header</b>&gt;
+   &lt;h1&gt;Scala und deren Frameworks&lt;/h1&gt;
+  &lt;/header&gt;
+ 
+  &lt;p&gt;Scala ist eine [...]&lt;/p&gt;
+
+  &lt;<b>section</b>&gt;
+   &lt;h1&gt;Akka&lt;/h1&gt;
+   &lt;p&gt; [...] &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;<b>section</b>&gt;
+   &lt;h1&gt;Lift&lt;/h1&gt;
+   &lt;p&gt; [...] &lt;/p&gt;
+  &lt;/section&gt;
+
+ &lt;/article&gt;
+&lt;/section&gt;
+
+&lt;<b>aside</b>&gt;
+ &lt;h1&gt;Sidebar&lt;/h1&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   &lt;a href="impressum.html"&gt;Impressum&lt;/a&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/aside&gt;
+
+
+					</pre>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide semanticHtml5" id="semantic3">
+				<header>
+					<span class="html">HTML</span>
+					<h1>weitere Neuheiten</h1>
+				</header>
+				<section>
+					<div class="formPhones">
+						<pre>type="<em>text</em>"</pre>
+						<figure>
+							<img src="src/android-form-text.png"
+								alt="android keyboard on input type text" />
+							<figcaption>Android</figcaption>
+						</figure>
+					</div>
+					<div class="formPhones">
+						<pre>type="<em>number</em>"</pre>
+						<figure>
+							<img src="src/android-form-number.png"
+								alt="android keyboard on input type number" />
+							<figcaption>Android</figcaption>
+						</figure>
+					</div>
+					<div class="formPhones">
+						<pre>type="<em>email</em>"</pre>
+						<figure>
+							<img src="src/iphone-form-email.png"
+								alt="iphone keyboard on input type email" />
+							<figcaption>iPhone</figcaption>
+						</figure>
+					</div>
+					<div class="formPhones">
+						<pre>type="<em>tel</em>"</pre>
+						<figure>
+							<img src="src/iphone-form-tel.png"
+								alt="iphone keyboard on input type tel" />
+							<figcaption>iPhone</figcaption>
+						</figure>
+					</div>
+					<div data-build style="clear: left">
+						<ul class="two-column list" style="list-style-position: inside;">
+							<li><span>neue Formularelemente, -attribute,
+									-validierung, Inputtypen</span></li>
+							<li><span>WAI-ARIA, Microdata, Ruby-Anotationen, SVG, MathML</span></li>
+							<li><span>neues <em>data-*</em>-Attribut
+							</span></li>
+							<li><span>&Auml;nderung der Content-Modelle</span></li>
+							<li><span>Standards für &lt;script&gt; und
+									&lt;style&gt;</span></li>
+							<li><span>&lt;a&gt; kann <em>alles</em> umschließen
+							</span></li>
+							<li><span>reine Präsentationselemente wurden
+									entfernt/umdeklariert</span></li>
+							<li><span>weitere neue Elemente &lt;datalist&gt;,
+									&lt;menu&gt;, &lt;command&gt;, &lt;details&gt;,
+									&lt;summary&gt;, &lt;progress&gt;, &lt;meter&gt;, ...</span></li>
+						</ul>
+					</div>
+				</section>
+				<aside class="note">
+					<section>Web Accessibility Initiative - Accessible Rich
+						Internet Applications</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="geolocation-title">
+				<section class="middle">
+					<h2>Geolocation API</h2>
+					<p>Prototyp</p>
+					<img src="src/HTML5_Device_Access_64.png" title="Geolocation API"
+						alt="Geolocation API">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide geolocation" id="geolocation1">
+				<header>
+					<span class="js">JS</span>
+					<h1>Geolocation API</h1>
+				</header>
+				<section>
+					<div id="msg" style="margin-top: 10px; float: right; width: 400px;"></div>
+					<div id="map_canvas"
+						style="width: 400px; height: 300px; margin-bottom: 10px;"></div>
+					<div data-build style="clear: left">
+						<ul class="list">
+							<li><span>&ouml;ffentliche IP-Adresse</li>
+							<li><span>Informationen zu WLAN-Netzwerken in der
+									Umgebung</span>
+								<ul>
+									<li><span>MAC-Adressen</span></li>
+									<li><span>Netzwerknamen (SSID)</span></li>
+									<li><span>Signalstärken</span></li>
+								</ul></li>
+						</ul>
+					</div>
+				</section>
+				<aside class="note">
+					<section>
+						<a
+							href="https://github.com/FlorianX/HTML5-experiments/blob/master/geolocation_api/index.html">HTML5-experiments
+							Geolocation API</a>
+					</section>
+				</aside>
+				<script type="text/javascript"
+					src="http://maps.google.com/maps/api/js?sensor=true"></script>
+				<script type="text/javascript" src="js/geo.js"></script>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="multimedia-title">
+				<section class="middle">
+					<h2>Multimedia-Elemente</h2>
+					<p>Prototyp</p>
+					<img src="src/HTML5_Multimedia_64.png" title="Mutlimedia"
+						alt="Multimedia">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide multimedia" id="multimedia1">
+				<header>
+					<span class="html">HTML</span>
+					<h1>Video- & Audio-Player</h1>
+				</header>
+				<section>
+					<style>
+.videoButtons {
+	border: 0;
+	color: #999999;
+	background-color: transparent;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 27px;
+	position: relative;
+	text-align: center;
+	box-shadow: none;
+	height: 100%;
+	padding: 0;
+	border-radius: 8px;
+}
+
+#playButton {
+	width: 35px;
+	border-right: 1px solid #ffffff;
+	float: left;
+}
+
+#muteButton {
+	width: 55px;
+	float: right;
+	border-left: 1px solid #ffffff;
+}
+
+.videoButtons:hover {
+	color: #ffffff;
+}
+
+#time {
+	float: left;
+	color: #999999;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 29px;
+	padding-left: 5px;
+	height: 100%;
+}
+
+#controlContainer {
+	margin-top: -4px;
+	width: 400px;
+	background-color: #222222;
+}
+
+#choice {
+	margin-left: 180px;
+	margin-top: 4px;
+	float: left;
+}
+</style>
+					<pre style="float: right">
+&lt;<b>video</b> width="400" height="225" id="video"
+  <em>poster</em>="src/canvas/bigbugbunny.jpg"&gt;
+ &lt;<b>source</b> src="src/canvas/video.ogv" /&gt;
+&lt;/video&gt;
+&lt;<b>audio</b> width="400" height="225" id="audio"&gt;
+ &lt;<b>source</b> src="src/canvas/video.ogv" /&gt;
+&lt;/audio&gt;</pre>
+					<div id="videoContainer">
+						<video width="400" height="225" id="video"
+							poster="src/canvas/bigbugbunny.jpg">
+							<source src="src/canvas/video.ogv" />
+						</video>
+						<div id="controlContainer">
+							<button id="playButton" type="button" class="videoButtons"
+								title="Abspielen">play!</button>
+							<div id="time">
+								<span id="shown">00:00</span>/<span id="duration"></span>
+							</div>
+							<select id="choice">
+								<option selected>video</option>
+								<option>audio</option>
+							</select>
+							<button id="muteButton" type="button" class="videoButtons"
+								title="Mute">mute!</button>
+							<div style="clear: both;"></div>
+						</div>
+						<audio width="400" height="225" id="audio">
+							<source src="src/canvas/video.ogv" />
+						</audio>
+					</div>
+					<pre>
+&lt;div id="controlContainer"&gt;
+ &lt;button id="playButton" type="button" class="videoButtons" title="Abspielen"&gt;play!&lt;/button&gt;
+  &lt;div id="time"&gt;
+   &lt;span id="shown"&gt;00:00&lt;/span&gt;/&lt;span id="duration"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;select id="choice"&gt;
+   &lt;option selected&gt;video&lt;/option&gt;
+   &lt;option&gt;audio&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button id="muteButton" type="button" class="videoButtons" title="Mute"&gt;mute!&lt;/button&gt;
+  &lt;div style="clear: both;"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+				</section>
+				<aside class="note">
+					<section>
+						<a
+							href="https://github.com/FlorianX/HTML5-experiments/blob/master/media_api/index.html">HTML5-experiments
+							Media API</a>
+							<h4>Formate:</h4>
+							<ul>
+							<li>MP4 = MPEG 4 files with H264 video codec and AAC audio codec</li>
+							<li>WebM = WebM files with VP8 video codec and Vorbis audio codec</li>
+							<li>Ogg = Ogg files with Theora video codec and Vorbis audio codec</li>
+							</ul>
+							IVC (Internet Video Coding) oder WebVC sind vielleicht n&auml;chstes Jahr neue Kandidaten durch ISO MPEG-Standard Auswahl.
+					</section>
+				</aside>
+				<script type="text/javascript" src="js/media.js"></script>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide multimedia" id="multimedia2">
+				<header>
+					<span class="html">HTML</span>
+					<h1>Video- & Audio-Player</h1>
+				</header>
+				<section>
+					<pre>
+$(element).bind('<b>loadedmetadata</b>', function(){
+	$('#duration').html(transSec(element.<b>duration</b>));
+});
+
+
+$('#playButton').click(function(){
+	var interval;
+	if(element.<b>paused</b>){
+		element.<b>play()</b>;
+		$(this).html('stop!');
+		
+		interval = setInterval(function(){
+			$('#shown').html(transSec(element.<b>currentTime</b>));
+		}, 1000);
+	}else{
+		clearInterval(interval);
+		element.<b>pause()</b>;
+		$(this).html('play!');
+	}
+});
+</pre>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="canvas-title">
+				<section class="middle">
+					<h2>Canvas</h2>
+					<p>Prototyp</p>
+					<img src="src/HTML5_3D_Effects_64.png" title="Canvas" alt="Canvas">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide canvas" id="canvas1">
+				<header>
+					<span class="html">HTML</span> + <span class="js">JS</span>
+					<h1>Videobearbeitung</h1>
+				</header>
+				<section>
+					<div>
+						<video width="400" height="225" controls id="origVideo">
+							<source src="src/canvas/video.ogv">
+						</video>
+						<canvas width="400" height="225" id="canvasVideo">
+							Your browser does not support this graphic.
+						</canvas>
+					</div>
+					<br> <label for="effect">Choose an effect:</label> <select
+						id="effect" style="font-size: 16px">
+						<option value="none" selected="selected">normal</option>
+						<option value="invert">inverted</option>
+						<option value="grey">grey scale</option>
+						<option value="edge_detection">edge detection</option>
+					</select>
+					<div id="edge_detection" style="display: none">
+						<div>
+							<input type="radio" name="matrix" value="0" checked="checked"
+								id="roberts" /> <label for="roberts">Roberts operator</label>
+							<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+				        <mfenced open="(" close=")">
+				        <mtable>
+							<mtr>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mn>0</mn></mtd>
+							</mtr>
+							<mtr>
+								<mtd>
+								<mn>0</mn></mtd>
+								<mtd>
+								<mo>-</mo>
+								<mn>1</mn></mtd>
+							</mtr>
+						</mtable>
+						</mfenced>
+					</mrow>
+				</math>
+						</div>
+						<div>
+							<input type="radio" name="matrix" value="1" id="simple1" /> <label
+								for="simple1">simple horizontal operator</label>
+							<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+				        <mfenced open="(" close=")">
+				        <mtable>
+							<mtr>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mo>-</mo>
+								<mn>1</mn></mtd>
+							</mtr>
+							<mtr>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mo>-</mo>
+								<mn>1</mn></mtd>
+							</mtr>
+						</mtable>
+						</mfenced>
+					</mrow>
+				</math>
+						</div>
+						<div>
+							<input type="radio" name="matrix" value="2" id="simple2" /> <label
+								for="simple2">simple vertical operator</label>
+							<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+				        <mfenced open="(" close=")">
+				        <mtable>
+							<mtr>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mn>1</mn></mtd>
+							</mtr>
+							<mtr>
+								<mtd>
+								<mo>-</mo>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mo>-</mo>
+								<mn>1</mn></mtd>
+							</mtr>
+						</mtable>
+						</mfenced>
+					</mrow>
+				</math>
+						</div>
+						<div>
+							<input type="radio" name="matrix" value="3" id="laplace" /> <label
+								for="laplace">Laplace operator</label>
+							<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+				        <mfenced open="(" close=")">
+				        <mtable>
+							<mtr>
+								<mtd>
+								<mn>0</mn></mtd>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mn>0</mn></mtd>
+							</mtr>
+							<mtr>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mo>-</mo>
+								<mn>4</mn></mtd>
+								<mtd>
+								<mn>1</mn></mtd>
+							</mtr>
+							<mtr>
+								<mtd>
+								<mn>0</mn></mtd>
+								<mtd>
+								<mn>1</mn></mtd>
+								<mtd>
+								<mn>0</mn></mtd>
+							</mtr>
+						</mtable>
+						</mfenced>
+					</mrow>
+				</math>
+						</div>
+					</div>
+				</section>
+				<aside class="note">
+					<section>
+						<a
+							href="https://github.com/FlorianX/HTML5-experiments/blob/master/canvas/video/index.html">HTML5-experiments
+							Canvas Videobearbeitung</a>
+					</section>
+				</aside>
+				<script type="text/javascript" src="js/canvas.js"></script>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="apps-title">
+				<section class="middle">
+					<h2>mobile Apps</h2>
+					<p>Prototyp</p>
+					<img src="src/HTML5_Offline_Storage_64.png" title="mobile Apps"
+						alt="mobile Apps">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide apps" id="apps1">
+				<header>
+					<h1>Gegen&uuml;berstellung</h1>
+				</header>
+				<section>
+					<div>
+						<h1>Native App</h1>
+						<ul class="list">
+							<li><span>für OS entwickelt</span></li>
+							<li><span>plattformabhängig</span></li>
+							<li><span>komplette Systemintegration</span></li>
+						</ul>
+					</div>
+					<div data-build id="hybrid">
+						<span>
+							<h1>Hybrid App</h1>
+							<ul class="list">
+								<li><span>Kombination</span></li>
+								<li><span>„Transformation“</span></li>
+								<li><span>Einsatz von Frameworks</span></li>
+							</ul>
+							<h2>Eine App für alle!</h2>
+						</span>
+					</div>
+					<div>
+						<h1>Web App</h1>
+						<ul class="list">
+							<li><span>optimierte Webseite</span></li>
+							<li><span>plattformunabhängig</span></li>
+							<li><span>basiert auf Web-Standards</span></li>
+							<li><span>browserabhängig</span></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide apps" id="apps2">
+				<header>
+					<h1>Hybrid App - empfehlenswert?</h1>
+				</header>
+				<section>
+					<ul class="list">
+						<li><span>Zugriff auf Batteriestatus, Kamera …</span>
+							<ul>
+								<li><span>durch Framework API</span></li>
+							</ul></li>
+						<li><span>Umsetzung plattformabhängiges Look-and-Feel?</span></li>
+						<li><span>Interoperabilität</span>
+							<ul>
+								<li><span>Container wechselt</span></li>
+							</ul></li>
+					</ul>
+					<div data-build>
+						<span> <img alt="Spirit App Loading"
+							src="src/appLoading.png"> <img alt="Spirit App Single"
+							src="src/appSingle.png">
+						</span>
+					</div>
+				</section>
+				<aside class="note">
+					<section>
+						<a
+							href="https://github.com/FlorianX/Spirit-HTML5-App">Spirit-HTML5-App @GitHub</a><br>
+						<a href="https://market.android.com/details?id=org.unsane.spiritHtml5App">Android Market</a>
+					</section>
+				</aside>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide transitionSlide" id="last-title">
+				<section class="middle">
+					<h2>Fazit</h2>
+					<p>Unterstützung & Ausblick</p>
+					<img src="src/badge-icon-sprite_64.png" title="Geolocation API"
+						alt="Geolocation API">
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide last" id="last1">
+				<header>
+					<h1>Browserunterst&uuml;tzung</h1>
+				</header>
+				<section>
+					<table style="width: 100%">
+						<tbody>
+							<tr>
+								<th colspan="3">Desktop</th>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><b>450</b></td>
+							</tr>
+							<tr>
+								<td class="browser">Google Chrome</td>
+								<td class="version">15.0.874</td>
+								<td class="points">342</td>
+							</tr>
+							<tr>
+								<td class="browser">Opera</td>
+								<td class="version">11.60</td>
+								<td class="points">325</td>
+							</tr>
+							<tr>
+								<td class="browser">Mozilla Firefox</td>
+								<td class="version">8.0
+								</th>
+								<td class="points">314</td>
+							</tr>
+							<tr>
+								<td class="browser">Apple Safari</td>
+								<td class="version">5.1</td>
+								<td class="points">293</td>
+							</tr>
+							<tr>
+								<td class="browser">Microsoft Internet Explorer</td>
+								<td class="version">9</td>
+								<td class="points">141</td>
+							</tr>
+							<tr>
+								<th colspan="3">Mobil</th>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><b>450</b></td>
+							</tr>
+							<tr>
+								<td class="os">Firefox Mobile 8</td>
+								<td class="devices"><em>Multiple platforms</em></td>
+								<td class="points">314</td>
+							</tr>
+							<tr>
+								<td class="os">iOS 5</td>
+								<td class="devices">Apple iPhone and iPod Touch</td>
+								<td class="points">296</td>
+							</tr>
+							<tr>
+								<td class="os">Opera Mobile 11.50</td>
+								<td class="devices"><em>Multiple platforms</em></td>
+								<td class="points">285</td>
+							</tr>
+							<tr>
+								<td class="os">MeeGo/Harmattan</td>
+								<td class="devices">Nokia N9 and N950</td>
+								<td class="points">272</td>
+							</tr>
+							<tr>
+								<td class="os">BlackBerry OS 7</td>
+								<td class="devices">BlackBerry Bold 9900 and others</td>
+								<td class="points">260</td>
+							</tr>
+							<tr>
+								<td class="os">Android 4.0</td>
+								<td class="devices">Samsung Galaxy Nexus</td>
+								<td class="points">230</td>
+							</tr>
+							<tr>
+								<td class="os">Android 2.3</td>
+								<td class="devices">Google Nexus S and others</td>
+								<td class="points">177</td>
+							</tr>
+							<tr>
+								<td class="os">webOS 2.1</td>
+								<td class="devices">Palm Pre Plus, Pre 2</td>
+								<td class="points">155</td>
+							</tr>
+							<tr>
+								<td class="os">Windows Phone 7.5 (Mango)</td>
+								<td class="devices">Samsung Omnia W, LG E906 and others</td>
+								<td class="points">140</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="source">(Quelle: http://html5test.com/)</p>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide last" id="last2">
+				<header>
+					<h1>Fazit</h1>
+				</header>
+				<section>
+					<ul class="list">
+						<li><span>Konzentration auf HTML5</span></li>
+						<li><span>HTML5-Nutzung klar empfohlen</span></li>
+						<li><span>viele neue Möglichkeiten</span>
+							<ul>
+								<li><span>manche noch hochexperimentell</span></li>
+								<li><span>andere weitgehend implementiert</span></li>
+								<li><span>Bibliotheken können hier unterstützen
+										(Modernizr)</span></li>
+							</ul></li>
+						<li><span>schließt Lücken zwischen Desktop und Web</span></li>
+						<li><span>Wichtig: testen, testen, testen</span>
+							<ul>
+								<li><span>http://caniuse.com</span></li>
+							</ul></li>
+					</ul>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide" id="thanks-title">
+				<section class="middle">
+					<h2>Danke</h2>
+					<img alt="HTML5 the Future" src="src/HTML5_sticker.png"
+						style="width: 500px;">
+					<h4>@GitHub FlorianX /</h4>
+					<h4>
+						<a href="https://github.com/FlorianX/HTML5-experiments">HTML5-experiments</a>
+					</h4>
+					<h4>
+						<a href="https://github.com/FlorianX/Spirit-HTML5-App">Spirit-HTML5-App</a>
+					</h4>
+				</section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Slide //_-> -->
+			<div class="slide" id="thanks-title">
+				<section class="middle"></section>
+			</div>
+			<!-- <-_// Slide  -->
+			<!-- Spirit Slides //_-> -->
+			<div class="slide" id="spirit-title">
+				<section class="middle">
+					<h2>spirit@fhs + StudWeb</h2>
+					<p>Die Motivation</p>
+					<img src="src/logo_spirit_final_64.png"
+						title="spirit@fhs &amp; StudWeb" alt="spirit@fhs &amp; StudWeb">
+				</section>
+			</div>
+			<div class="slide spirit" id="spirit-overview">
+				<header>
+					<h1>Projekt &Uuml;berblick</h1>
+				</header>
+				<section>
+					<img alt="Projekt &Uuml;berblick" src="src/uebersicht_Final.png">
+				</section>
+			</div>
+			<div class="slide spirit" id="slideShow">
+				<section class="middle">
+					<iframe _src="src/screens/slideshow.html" scrolling="no"></iframe>
+				</section>
+			</div>
+			<!-- <-_// Spirit Slides  -->
+			<!-- Slide //_-> -->
+			<div class="slide canvas" id="canvas2">
+				<header>
+					<span class="html">HTML</span> + <span class="js">JS</span>
+					<h1>Bildbearbeitung</h1>
+				</header>
+				<section>
+					<style type="text/css">
+#start,#invert,#medianfilter,#histogram {
+	border: 1px solid #000000;
+	/*margin-right:20px;*/
+}
+
+/*button {
+	margin-left: 140px;
+}*/
+#file {
+	margin-left: 60px;
+}
+</style>
+					<canvas id="start" width="215" height="215">
+						Your browser does not support this graphic.
+					</canvas>
+					<canvas id="invert" width="215" height="215">
+						Your browser does not support this graphic.
+					</canvas>
+					<canvas id="medianfilter" width="215" height="215">
+						Your browser does not support this graphic.
+					</canvas>
+					<canvas id="histogram" width="256" height="100">
+						Your browser does not support this graphic.
+					</canvas>
+					<br> <select id="file">
+						<option value="src/canvas/test.png" selected>smiley</option>
+						<option value="src/canvas/Verrauscht1.jpg">noisy 1</option>
+						<option value="src/canvas/Verrauscht2.jpg">noisy 2</option>
+					</select>
+					<button onclick="doInvert();">invert</button>
+					<button onclick="doReduction();">median filter</button>
+				</section>
+				<script type="text/javascript" src="js/pictures.js"></script>
+			</div>
+			<!-- <-_// Slide  -->
+			<div id="speaker-note" class="invisible" style="display: none;"></div>
+		</div>
+		<!-- slides -->
+	</div>
+	<!-- presentation -->
+	<!--[if lt IE 9]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+    <script>CFInstall.check({ mode: "overlay" });</script>
+    <![endif]-->
+	<script type="text/javascript" src="js/presentation.js"></script>
+</body>
+</html>

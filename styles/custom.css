@@ -1,0 +1,185 @@
+#title-slide section img {
+	width: 500px;
+	margin-top: 50px;
+}
+
+#title-slide section hgroup h1 {
+	display: none;
+}
+
+#title-slide section.middle {
+	line-height: 40px;
+}
+
+#title-slide p {
+	padding-right: 50px;
+	padding-top: 0px;
+	margin-top: 100px;
+	text-align: right;
+}
+
+iframe {
+	background: none repeat scroll 0 0 white;
+	border: medium none;
+	height: 700px;
+	width: 900px;
+}
+
+#slideShow .counter {
+	display: none;
+}
+
+#toc-list>li {
+	font-size: 26px;
+	line-height: 33px;
+	opacity: 0.85;
+	list-style: none;
+}
+
+#toc-list>li:hover {
+	opacity: 1;
+}
+
+#toc-list a {
+	border-bottom: 0 none;
+}
+
+#toc-list a:hover {
+	border-bottom: 2px solid #3F3F3F;
+}
+
+#toc-list img {
+	margin-left: 15px;
+	vertical-align: middle;
+}
+
+.list li {
+	font-size: 21px;
+	padding: 10px 0;
+	list-style-type: square;
+	padding-left: 6px;
+	color: #0055AB;
+}
+
+.list span {
+	color: #000000;
+}
+
+ul.list li ul li {
+	font-size: 19px;
+}
+
+th {
+	font-size: 23px;
+	color: #F14A29;
+}
+
+td {
+	vertical-align: text-top;
+}
+
+#occupy {
+	float: right;
+	width: 250px;
+	margin-top: 60px;
+}
+
+#semantic3 div.formPhones {
+	float: left;
+	width: 24%;
+	padding-right: 1%;
+	text-align: center;
+}
+
+#semantic3 img {
+	width: 100%;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 4px 6px;
+}
+
+#semantic3 figure{
+	margin-top: 0px; margin-bottom: 0px;
+}
+
+button {
+	font-size: 13px;
+}
+
+#apps1 div {
+	float: left;
+	width: 30%;
+}
+
+#apps1 section h1 {
+	color: #F14A29;
+	font-size: 23px;
+}
+
+#hybrid {
+	padding-top: 250px;
+	padding-left: 25px;
+	margin-left: 15px;
+	padding-right: 0px;
+	margin-right: 25px;
+	border-left: 1px dotted #F14A29;
+	border-right: 1px dotted #F14A29;
+}
+
+#apps2 img {
+	width: 180px;
+	margin-left: 150px;
+}
+
+.devices,.version {
+	color: #9F9F9F;
+}
+
+p.source {
+	color: #9F9F9F;
+	float: right;
+	font-size: 13px;
+	margin-top: 55px;
+}
+
+#thanks-title h4 {
+	margin: 0;
+	line-height: 25px;
+}
+
+#speaker-note {
+	border-top: 2px solid #01386B; position : absolute;
+	left: 0;
+	top: 70%;
+	width: 100%;
+	height: 30%;
+	z-index: 8;
+	opacity: 0.90;
+	background-color: white;
+	overflow: auto;
+	padding: 20px 20px;
+	-webkit-transition: top 0.5s ease-in-out;
+	-moz-transition: top 0.5s ease-in-out;
+	-o-transition: top 0.5s ease-in-out;
+	transition: top 0.5s ease-in-out;
+	position: absolute;
+}
+
+#speaker-note.invisible {
+	top: 101%;
+}
+
+aside.note{
+	display:none;
+}
+
+#speaker-note ul, h4{
+	margin:0;
+	margin-top:7px;
+}
+
+#speaker-note li{
+  padding: 0;
+}
+
+#geolocation1 canvas{
+	border:0px;
+}
